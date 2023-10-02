@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy Pink Website with Animated Shapes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ff91a4; /* Candy Pink background color */
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        header:hover {
+            background-color: #555;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background-color: #fff;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .box:nth-child(1) {
+            animation: rollInOut 2s linear infinite;
+        }
+
+        .box:nth-child(2) {
+            animation: expandAndShrink 2s linear infinite;
+        }
+
+        .box:nth-child(3) {
+            animation: rotateTriangles 2s linear infinite;
+        }
+
+        .box:nth-child(4) {
+            animation: spinStars 2s linear infinite;
+        }
+
+        .shape {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            opacity: 0.8;
+        }
+
+        .triangle {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background-color: #ff69b4; /* Candy Pink */
+            transform: rotate(0deg);
+        }
+
+        .circle {
+            border-radius: 50%;
+            background-color: #ff69b4; /* Candy Pink */
+        }
+
+        .square {
+            background-color: #ff69b4; /* Candy Pink */
+        }
+
+        .star {
+            clip-path: polygon(
+                50% 0%, 61.8% 38.2%, 100% 44.2%,
+                69.1% 69.1%, 80.1% 100%, 50% 83.3%,
+                19.9% 100%, 30.9% 69.1%, 0% 44.2%,
+                38.2% 38.2%
+            );
+            background-color: #ff69b4; /* Candy Pink */
+            transform: rotate(0deg);
+        }
+
+        @keyframes rollInOut {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes expandAndShrink {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+        }
+
+        @keyframes rotateTriangles {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinStars {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Candy Pink Website</h1>
+    </header>
+    <div class="container">
+        <div class="box">
+            <div class="shape triangle"></div>
+        </div>
+        <div class="box">
+            <div class="shape circle"></div>
+        </div>
+        <div class="box">
+            <div class="shape square"></div>
+        </div>
+        <div class="box">
+            <div class="shape star"></div>
+        </div>
+    </div>
+</body>
+</html>
